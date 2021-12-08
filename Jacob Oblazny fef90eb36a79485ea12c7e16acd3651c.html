@@ -1,0 +1,661 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Jacob Oblazny</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+}
+
+.simple-table-header {
+	background: rgb(247, 246, 243);
+	color: black;
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(145, 145, 142, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(187, 132, 108, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(215, 129, 58, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 148, 51, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(108, 155, 125, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(91, 151, 189, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(167, 130, 195, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(205, 116, 159, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(225, 111, 100, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(145, 145, 142, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(187, 132, 108, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(215, 129, 58, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 148, 51, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(108, 155, 125, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(91, 151, 189, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(167, 130, 195, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(205, 116, 159, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(225, 111, 100, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="dacf60d4-49ef-436f-bd50-b60b397956e8" class="page mono"><header><img class="page-cover-image" src="Jacob%20Oblazny%20fef90eb36a79485ea12c7e16acd3651c/DSC_0184.jpg" style="object-position:center 63.23%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🗞️</span></div><h1 class="page-title">Jacob Oblazny</h1></header><div class="page-body"><blockquote id="17d86781-6de2-4bf5-ba5e-17ad62519b3a" class="">I&#x27;m a mechanical engineering student at Rose-Hulman 🤖. I want to build cool products that solve meaningful problems.</blockquote><p id="f3b3073e-2e37-41b2-ac28-bbad9290380b" class="">
+</p><h1 id="ebc8dd3c-04ff-4fcf-9e82-62a19e3c6b34" class="">☎️ Contact information</h1><p id="32c48dd1-b8d8-4d79-a2f5-ddeccba17bb9" class="">📧 Email address: oblaznjc@rose-hulman.edu</p><p id="02c26e56-d529-4fdc-a935-e5cad893c87c" class="">🔗 LinkedIn: <a href="https://www.linkedin.com/in/oblazny/">https://www.linkedin.com/in/oblazny/</a></p><hr id="bea1f2df-d528-423c-b599-666e6538d581"/><h1 id="a4b1cdfa-f5ab-411f-ae81-2d999ffe07f4" class="">👨🏼‍🏭 Work experience</h1><h2 id="9b1ea06c-4fb8-4218-8db4-b0997652430c" class="">R&amp;D Intern</h2><p id="c92c2c16-ca17-4bb4-bd08-5c17a2a848d0" class="block-color-gray">AquaQuant Laboratories (Terre Haute,IN) Spring-Summer 2021</p><ul id="e023ae01-688c-4d39-b752-c328cb4b67ce" class="bulleted-list"><li style="list-style-type:disc">Designed and built AQL coating durability test for Oak Ridge National Laboratory</li></ul><ul id="25fc3cdf-1d87-43be-a0c3-b3b900bd14c0" class="bulleted-list"><li style="list-style-type:disc">Applied RaspberryPi, Arduino, and sensors to automate durability test</li></ul><ul id="d6f8ce2a-85b6-492d-8e68-8ef1404d5290" class="bulleted-list"><li style="list-style-type:disc">Designed and built prototypes of AQL “puck” for water delivery to computer chips</li></ul><ul id="067e2b9b-0ad7-4b51-b168-70887b78ed52" class="bulleted-list"><li style="list-style-type:disc">Learn more about AQL: <a href="https://innovationcrossroads.ornl.gov/cohort/4">https://innovationcrossroads.ornl.gov/cohort/4</a></li></ul><h2 id="db716a23-cdd2-4fe1-bbb1-7cf8fbfaff32" class="">Weapons Hardware Test Engineer</h2><p id="bac93fe0-5978-4ee2-9ee2-81dc4b16bd44" class="block-color-gray">Collins Aerospace (Military GPS) Co-op<em>, Cedar Rapids, IA – (Spring-Summer 2020)</em></p><ul id="b6e68f91-7f2b-4975-9f3b-410915bb795c" class="bulleted-list"><li style="list-style-type:disc">Ran environmental testing of DIGAR-300 with vibration table and temperature chamber</li></ul><ul id="4bb76b36-faf2-48b9-abfa-2cd801475a9b" class="bulleted-list"><li style="list-style-type:disc">Assembled and documented test equipment to send and receive simulated GPS signals</li></ul><ul id="8378c120-c591-4b9a-b9af-1b4b81d34d9d" class="bulleted-list"><li style="list-style-type:disc">Redesigned package of engineering test fixture using NX</li></ul><ul id="d5a8cfac-4ad5-43b8-af2e-cfd38e1fd3da" class="bulleted-list"><li style="list-style-type:disc">Trained in and utilized peer review process and best practices</li></ul><h2 id="f040a6f8-f472-4a4b-aaa1-6f774801cea4" class="">Co-founder</h2><p id="b308dc1f-5af8-459b-a9f1-e72cc2407423" class="block-color-gray">LifelinePi (<em>2020-2021)</em></p><ul id="7504149d-c5e9-442f-bf3e-5aa59e8a93c8" class="bulleted-list"><li style="list-style-type:disc">Developed a hardware product to integrate doxy.me video calls with a patient’s TV</li></ul><ul id="3004aeb2-9478-4bc9-86e2-7a0b7612ad1a" class="bulleted-list"><li style="list-style-type:disc">Developed a business model to integrate with the healthcare industry</li></ul><ul id="55b971d3-4750-4f8d-8762-44e64632ed50" class="bulleted-list"><li style="list-style-type:disc">Awarded $5000 grant from Coding it Forward, funded by Schmidt Futures</li></ul><ul id="fc894488-94ea-456d-b492-0a73514a3156" class="bulleted-list"><li style="list-style-type:disc">Organizing a pilot with Union Health (Vigo County)</li></ul><figure id="9e6f0c4c-f0bf-439f-a51c-788deb13877b"><a href="https://youtu.be/oZlRBxUNzkw" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">LifelinePi demo</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/26265553/img/favicon.ico" class="icon bookmark-icon"/>https://youtu.be/oZlRBxUNzkw</div></div><img src="https://i.ytimg.com/vi/oZlRBxUNzkw/hqdefault.jpg" class="bookmark-image"/></a></figure><hr id="08cacaf7-514d-4c82-b24a-10dc919247f9"/><h1 id="45801926-af17-4dda-983f-308050f13f55" class="">🛠 Skills</h1><h2 id="74cdc644-d89b-432a-8555-b3e9cb5b277a" class="">💻 Software</h2><h3 id="a120350c-7a26-49bd-b0fa-04b340f057d0" class="">Java ⭐️⭐️⭐️</h3><p id="984c30cd-23da-4f98-927c-b6601f44bd8a" class="">My &quot;native&quot; programming language, from object-oriented programming (CSSE220) and data structures and algorithms (CSSE 230).</p><div id="500a0cbf-8ebc-4346-9746-35d12abdab01" class="column-list"><div id="b94f2fed-3d0e-4cf5-8adc-764d13d3ee99" style="width:37.5%" class="column"><p id="b4e07a1d-e7a0-4d38-bad2-33664aa472f9" class=""><mark class="highlight-teal">Genetic Algorithm</mark></p></div><div id="a89c6c6c-67e7-4f92-9eab-e1593128a91d" style="width:62.5%" class="column"><p id="fbed9996-f2c3-4ad6-bdda-928ec6c9c89c" class=""><a href="https://github.com/oblaznjc/GeneticAlgorithm">Github</a></p></div></div><p id="72b826ad-46c2-4aaf-aa76-e6dd80cf1194" class=""><a href="https://rose-hulman.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1f973e7d-a18a-4f12-8457-acd6014a5585">Watch Video</a></p><figure id="5a1485e7-6c9c-4b5c-88fa-1949970950c3"><a href="https://rose-hulman.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1f973e7d-a18a-4f12-8457-acd6014a5585" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">TeamR_201_GeneticAlgorithm</div></div><div class="bookmark-href"><img src="https://rose-hulman.hosted.panopto.com/Panopto/ContentCache/635887437591173851/_branding/f7761031-7ae5-4f53-bb8e-bfeaad1667a4/635887437509095426_favicon.png" class="icon bookmark-icon"/>https://rose-hulman.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1f973e7d-a18a-4f12-8457-acd6014a5585</div></div><img src="https://rose-hulman.hosted.panopto.com/Panopto/Services/FrameGrabber.svc/FrameRedirect?objectId=1f973e7d-a18a-4f12-8457-acd6014a5585&amp;mode=Delivery&amp;random=0.927649419255391&amp;usePng=False" class="bookmark-image"/></a></figure><h3 id="e4b7286e-2dd6-4df4-8eca-b92d0ef6982c" class="">Python ⭐️⭐️</h3><p id="331428f4-6f59-413f-b830-84bfdb1d47eb" class="">My first programming language, I&#x27;ve worked with it in intro to software development (CSSE120). </p><div id="53c83dab-39ec-4dc1-8909-3ee9c38ca906" class="column-list"><div id="4e17cf49-6391-4b89-a618-eadb9f1ced3e" style="width:37.5%" class="column"><p id="c7411ddc-d784-48b2-955d-0d65fc23b1c3" class=""><mark class="highlight-red">Arcade Game: Laser Hater</mark></p></div><div id="41ae0b80-2794-42e5-80d7-5aa2ad9ff6d7" style="width:62.5%" class="column"><p id="a315d9a3-a5ad-45b8-94ed-43b4f001a698" class=""><a href="https://github.com/oblaznjc/LaserHater">Github</a></p></div></div><p id="75d0f9e6-c0ff-40f7-b7d0-3e0b6aefafca" class=""><a href="https://jacoboblazny-kob94.hippovideo.io/video/play/otdszH8JRDBwjsoclBK-1YYKAipJ0o4HzbB8AGR35gg?org_tok=VmoZHn7OqWxjfz4i3KOm-A&amp;utm_source=hv-campaigns&amp;hreferer=private&amp;hvre=false&amp;_=1630701037710&amp;">Watch Video</a></p><figure id="6b6a33c6-6dfb-4372-b96b-3a43c13627f7" class="image"><a href="https://jacoboblazny-kob94.hippovideo.io/video/thumbnail/otdszH8JRDBwjsoclBK-1YYKAipJ0o4HzbB8AGR35gg?org_tok=VmoZHn7OqWxjfz4i3KOm-A&amp;hvre=false&amp;is_play_time=true&amp;utm_source=hv-campaigns&amp;hreferer=private&amp;_=1630701037710"><img src="https://jacoboblazny-kob94.hippovideo.io/video/thumbnail/otdszH8JRDBwjsoclBK-1YYKAipJ0o4HzbB8AGR35gg?org_tok=VmoZHn7OqWxjfz4i3KOm-A&amp;hvre=false&amp;is_play_time=true&amp;utm_source=hv-campaigns&amp;hreferer=private&amp;_=1630701037710"/></a></figure><h3 id="f42e5a95-efb0-455a-95b5-de797011ff40" class="">Matlab ⭐️</h3><p id="9a05c457-b490-486e-8986-26eb3246d15c" class="">Learning for mechanical engineering analysis. Used in Mechanical Systems (ES214), Fluid Systems (ES212), and Analysis and Design of Engineering Systems (ES205).</p><h2 id="2b8c23eb-dc31-4673-b893-75b9a7ad8bf9" class="">💻 CAD</h2><h3 id="9121d80e-a390-403a-8031-ef6a7234118a" class="">Inventor ⭐️⭐️⭐️⭐️⭐️</h3><p id="eda9bb7d-1ed3-46f0-80cf-f9107fa77523" class="">My first CAD program, I&#x27;ve worked with it since 2014. I learned CAD in high school courses and applied over 300 CAD hours on Huskie Robotics (FRC Team 3061).</p><p id="16e36452-f668-4fd9-8623-921085ab40fc" class=""><a href="https://sites.google.com/view/frcbyob/personal-design/robot-platform-climber?authuser=0">FRC 2019</a> (Led Platform Climber Team)</p><figure id="fef90eb3-6a79-485e-a12c-7e16acd3651c" class="image"><a href="Jacob%20Oblazny%20fef90eb36a79485ea12c7e16acd3651c/EmbeddedImage.jpg"><img style="width:4032px" src="Jacob%20Oblazny%20fef90eb36a79485ea12c7e16acd3651c/EmbeddedImage.jpg"/></a></figure><p id="2ff947e3-2aa7-445d-95d2-5562b5add972" class=""><a href="https://workbench.grabcad.com/workbench/projects/gc_JZdmALIEaSyKnPbEngZVq6jY8XelfiesFnC0rQhhyr2#/space/gcBWlyiLP3oZAvDksl1kI9s8zSf8fvFchWtd-h6uRpdwqX/link/1331838">FRC 2018</a> (Led Arm Design Team)</p><figure id="63e5c5c2-9253-4676-9198-041178f1d20a" class="image"><a href="Jacob%20Oblazny%20fef90eb36a79485ea12c7e16acd3651c/Untitled.png"><img style="width:624px" src="Jacob%20Oblazny%20fef90eb36a79485ea12c7e16acd3651c/Untitled.png"/></a></figure><p id="2e3c617d-cea0-4996-a93e-96c2bd8919ee" class=""><a href="https://sites.google.com/view/frcbyob/fabrication">Sheetmetal Capstone (2020</a>)</p><figure id="d18739eb-e152-482a-8e2a-f1dfc6ba94ff" class="image"><a href="Jacob%20Oblazny%20fef90eb36a79485ea12c7e16acd3651c/Untitled%201.png"><img style="width:1219px" src="Jacob%20Oblazny%20fef90eb36a79485ea12c7e16acd3651c/Untitled%201.png"/></a><figcaption>Sheetmetal Robot Chassis</figcaption></figure><h3 id="6a620478-70e3-4c48-ab71-5760ac3deb65" class="">Solidworks ⭐️⭐️⭐️⭐️⭐️</h3><p id="6c8157b8-02a5-4837-8f2a-065573683e38" class="">My current CAD program, I&#x27;ve worked with it for 2 years and transitioned from Inventor quickly. I&#x27;ve used it in graphical communications (EM104) and applied it as the Chassis Lead of of RoseGPE.</p><h3 id="87d6c658-5546-4aad-9ffb-55fc031a6a37" class="">NX ⭐️⭐️⭐️</h3><p id="111b302e-7bc1-4b00-82e7-0b1c95e23862" class="">Learned on the job at Collins Aerospace to redesign a sheet metal operator panel.</p><hr id="f7d16a45-83df-4c33-89f0-fcbb0c40276d"/><h1 id="6bdebc11-4b03-49e4-b7c2-7fc2cb5e6ae3" class="">📜 Articles and Talks</h1><ul id="09ffed6b-757f-46fa-be39-ed05a43e8d42" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=zccG53mfvkA">Rose Talks: Sawmill Edition</a></li></ul><figure id="6f7776bf-de1a-4df5-a835-9ebd66bd6204"><div class="source"><a href="https://www.youtube.com/watch?v=zccG53mfvkA">https://www.youtube.com/watch?v=zccG53mfvkA</a></div></figure><ul id="ab48e964-9224-45dd-8437-bd088bde069c" class="bulleted-list"><li style="list-style-type:disc"><a href="https://blog.codingitforward.com/improving-the-reach-of-telehealth-to-those-who-need-it-the-most-814422aa4ed0">Improving the reach of telehealth to those who need it the most</a> (LifelinePi)</li></ul><ul id="a4d903d6-8f0e-4f0d-a1d7-4886b8146dd7" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.chicagotribune.com/suburbs/naperville-sun/ct-nvs-5th-avenue-student-proposals-st-0428-20170427-story.html">Naperville students propose innovative, green ideas for 5th Avenue</a> (Winner)</li></ul><figure id="10ba337a-4033-4e37-9225-5411163f59cb"><a href="https://joblazny.wixsite.com/villescape" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">5th Avenue Redevelopment | Naperville | VilleScape</div><div class="bookmark-description">NNHS architecture students design a new 5th Avenue corridor. Learn more about Villescape and their concept.</div></div><div class="bookmark-href"><img src="https://www.wix.com/favicon.ico" class="icon bookmark-icon"/>https://joblazny.wixsite.com/villescape</div></div><img src="https://static.wixstatic.com/media/d72562_2dab23f8acea45f1bc9905ab990fdc81f000.jpg/v1/fill/w_768,h_432,al_c,lg_1,q_80,usm_0.33_1.00_0.00/d72562_2dab23f8acea45f1bc9905ab990fdc81f000.jpg" class="bookmark-image"/></a></figure><ul id="001207b9-f0d1-4454-8cec-f465487f684c" class="bulleted-list"><li style="list-style-type:disc"><a href="https://docs.google.com/document/d/e/2PACX-1vQzFWCqgjPkoK0r3k2HRIuKLpUS-bq5Jecg_8KHF7ng7wuByAgXpP8SdpsmQqWViA/pub">RC Car Engineering Report</a> (Highschool R&amp;D Course)</li></ul><hr id="c60d2b1e-32a4-4ade-8853-ba557be65e7d"/><h1 id="68fd8dad-3d24-43c8-918f-b090d94d1e88" class="">📚 Education</h1><h2 id="1c31d358-d37f-4c39-ab53-b10a8bb93c2d" class=""><strong>Bachelor&#x27;s of Science in Mechanical Engineering</strong></h2><p id="3fa4147d-1e3e-4db2-942d-a733efd834c5" class="block-color-gray"><em>2019-2023</em></p><p id="050b7e7a-cff7-4c93-a764-5525900ec072" class="">Rose-Hulman Institute of Technology (3.4 / 4.0)</p><p id="cfe95a85-d125-4329-954b-2385677b3064" class="">Minor in Computer Science and Entrepreneurial Studies</p><p id="e1c8955a-be5b-455c-a976-99f656478f75" class="">
+</p><h1 id="6cf988bd-2495-4aa3-aa1a-cd13cecf15d5" class="">🫐 Just for Fun</h1><p id="70a6f3f2-d15f-4aa4-9ebc-dee4c27add57" class="">I produced this fine yogurt review with my friend <a href="https://adinocap.com/">Adi</a>! Check him out for all of your Electrical + Computer Engineering (+ yogurt) needs.</p><figure id="89727f7f-ef0c-4db9-8fff-7a314e04d235"><div class="source"><a href="https://youtu.be/04OgIlpoArc">https://youtu.be/04OgIlpoArc</a></div></figure><p id="cf039cbc-65d6-4908-bff4-d6edf61f3906" class="">
+</p><h1 id="2a08d761-881b-4383-9b92-7f22fc043a7c" class="">Appendix</h1><p id="3f6c9862-a866-4f7f-855a-c33d27ca5a3d" class="">
+</p><figure id="ea500082-a52b-4cd8-9a40-416f9dd808b6" class="image"><a href="Jacob%20Oblazny%20fef90eb36a79485ea12c7e16acd3651c/Untitled%202.png"><img style="width:959px" src="Jacob%20Oblazny%20fef90eb36a79485ea12c7e16acd3651c/Untitled%202.png"/></a></figure><figure id="6b5f958b-6f35-49ea-a772-2555e4555050"><a href="https://photos.app.goo.gl/VbWRvs33WaBY6ZA38" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">New video by Jacob Oblazny</div></div><div class="bookmark-href"><img src="https://ssl.gstatic.com/social/photosui/images/logo/1x/photos_64dp.png" class="icon bookmark-icon"/>https://photos.app.goo.gl/VbWRvs33WaBY6ZA38</div></div><img src="https://lh3.googleusercontent.com/9ns41NxbVOri9Ef_50-1QhQNFIfRrCUk2AERqZqo2pLj3NMUS22TG0vVdj0GeXcqZUHGatld4TSf49ZSn3yUhxfbDpIiGNFob69HiNq_OTXWwmiGxDIXuWNlweSapozWsU7jo6xonH4=w600-h315-p-k-no" class="bookmark-image"/></a></figure><div id="f50c6c29-1c8d-471d-b86d-d4b1bbe04ed3" class="column-list"><div id="90ac270b-8513-4671-81a2-533c858a8a41" style="width:50.000000000000014%" class="column"><figure id="eb6d2f47-1386-434c-87c4-e37da46d66f9" class="image"><a href="Jacob%20Oblazny%20fef90eb36a79485ea12c7e16acd3651c/Untitled%203.png"><img style="width:705px" src="Jacob%20Oblazny%20fef90eb36a79485ea12c7e16acd3651c/Untitled%203.png"/></a></figure></div><div id="c12a4ae0-b4f1-4236-b66c-43ee4834d7a8" style="width:50%" class="column"><figure id="5e6f18c3-af0f-41fc-8212-199456615b5a" class="image"><a href="Jacob%20Oblazny%20fef90eb36a79485ea12c7e16acd3651c/Untitled%204.png"><img style="width:705px" src="Jacob%20Oblazny%20fef90eb36a79485ea12c7e16acd3651c/Untitled%204.png"/></a></figure></div></div><div id="48a41668-4b40-4806-a576-4c23173bd95d" class="column-list"><div id="b6bf71ed-b261-462f-9ee2-a420e86c8f9f" style="width:50%" class="column"><figure id="8d1b388a-e815-4e13-aefe-876a1dc386b4"><a href="https://photos.app.goo.gl/kSa5DVkNMDmzr94U8" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">New video by Jacob Oblazny</div></div><div class="bookmark-href"><img src="https://ssl.gstatic.com/social/photosui/images/logo/1x/photos_64dp.png" class="icon bookmark-icon"/>https://photos.app.goo.gl/kSa5DVkNMDmzr94U8</div></div><img src="https://lh3.googleusercontent.com/j9vjUEvbwaXZZczkF9xx9uUygsiIvEa0RV1XDBHFq1-gvSQmS5xwkLxozcNzVSlPPr7AZ7CqJn0ZQg_nhWysIneLXByn3DkejPnjTF5wcMbd9yptPH-znbBUcQnxT89ye8nJOPHP-7s=w600-h315-p-k-no" class="bookmark-image"/></a></figure></div><div id="846e70f1-5f55-4b75-875f-e097d7880b39" style="width:50%" class="column"><figure id="66419280-9890-4ed2-bda8-63c6557a7ded"><a href="https://photos.app.goo.gl/tr4tgPKmkiC9pXuH7" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">New video by Jacob Oblazny</div></div><div class="bookmark-href"><img src="https://ssl.gstatic.com/social/photosui/images/logo/1x/photos_64dp.png" class="icon bookmark-icon"/>https://photos.app.goo.gl/tr4tgPKmkiC9pXuH7</div></div><img src="https://lh3.googleusercontent.com/-LJuzLhYYepaEWKRd2dm7uZ8po19jwW_6La1mG0Nvr3Pa2WdCpggZ9jE6v5YFCPuty3GWrEkss8LPNw6e1qoaEGKQm4oGSanb4eHa0Rk7FM0V-NoaDUeiCvSPCsK91Hfapixo22YPeg=w600-h315-p-k-no" class="bookmark-image"/></a></figure></div></div><figure id="502a9cfe-48f3-4f6f-b1b5-ea61b715ad57" class="image"><a href="Jacob%20Oblazny%20fef90eb36a79485ea12c7e16acd3651c/Untitled%205.png"><img style="width:959px" src="Jacob%20Oblazny%20fef90eb36a79485ea12c7e16acd3651c/Untitled%205.png"/></a></figure><div id="6b4b422d-87a8-441c-bbb2-3067cf33cdf1" class="column-list"><div id="34e5c4b4-93aa-4da7-8e0c-5ea14213f1aa" style="width:50%" class="column"><figure id="90f71966-b1aa-4903-b7a1-0ed283a2b3f6" class="image"><a href="Jacob%20Oblazny%20fef90eb36a79485ea12c7e16acd3651c/Untitled%206.png"><img style="width:959px" src="Jacob%20Oblazny%20fef90eb36a79485ea12c7e16acd3651c/Untitled%206.png"/></a></figure></div><div id="3548a956-8190-4f99-ae1e-de45d32a14b8" style="width:50%" class="column"><figure id="0afb820d-b227-4552-97b4-2ba2f93c14cf" class="image"><a href="Jacob%20Oblazny%20fef90eb36a79485ea12c7e16acd3651c/Untitled%207.png"><img style="width:959px" src="Jacob%20Oblazny%20fef90eb36a79485ea12c7e16acd3651c/Untitled%207.png"/></a></figure></div></div><div id="65b0a958-7fd5-4d57-861c-d7be02abf530" class="column-list"><div id="1fb623d4-98d7-40f6-9dcd-cd5252c03eaa" style="width:50%" class="column"><figure id="fb632c06-9d14-4462-bdc2-814fee8619f8" class="image"><a href="Jacob%20Oblazny%20fef90eb36a79485ea12c7e16acd3651c/Untitled%208.png"><img style="width:959px" src="Jacob%20Oblazny%20fef90eb36a79485ea12c7e16acd3651c/Untitled%208.png"/></a></figure></div><div id="dc4e0a2f-b7aa-4ef4-8876-31ffaa4875e8" style="width:50%" class="column"><figure id="937d25e7-6b1d-4ca7-8293-ef1d57fc098c" class="image"><a href="Jacob%20Oblazny%20fef90eb36a79485ea12c7e16acd3651c/Untitled%209.png"><img style="width:959px" src="Jacob%20Oblazny%20fef90eb36a79485ea12c7e16acd3651c/Untitled%209.png"/></a></figure></div></div><div id="ba958b55-9027-41e9-9569-6e64d237fa93" class="column-list"><div id="e46940ff-88ff-499e-bfbd-d84a5be056f9" style="width:50%" class="column"><figure id="b3eff253-a29e-47f4-8481-a80a2bd7ddf9" class="image"><a href="Jacob%20Oblazny%20fef90eb36a79485ea12c7e16acd3651c/Untitled%2010.png"><img style="width:959px" src="Jacob%20Oblazny%20fef90eb36a79485ea12c7e16acd3651c/Untitled%2010.png"/></a></figure></div><div id="9f4fcde4-e32f-45a8-a422-cc08752eea7d" style="width:50%" class="column"><figure id="491297bf-884f-477a-8300-fa8523b2abcc" class="image"><a href="Jacob%20Oblazny%20fef90eb36a79485ea12c7e16acd3651c/Untitled%2011.png"><img style="width:959px" src="Jacob%20Oblazny%20fef90eb36a79485ea12c7e16acd3651c/Untitled%2011.png"/></a></figure></div></div><p id="fa27cc0c-8e14-46c3-b24d-62631f2baa2c" class="">
+</p></div></article></body></html>
